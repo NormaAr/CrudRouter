@@ -1,0 +1,34 @@
+{
+  "restaurant": [
+    {
+      "precioPlatillo": "Benitez",
+      "nombrePlatillo": "Rosaura",
+      "categoria": "bebida",
+      "id": 5
+    },
+    {
+      "precioPlatillo": "Adame",
+      "nombrePlatillo": "Norma",
+      "categoria": "bebida",
+      "id": 7
+    },
+    {
+      "nombrePlatillo": "ghjlkñ",
+      "precioPlatillo": "gjhklñ",
+      "categoria": "postre",
+      "id": 8
+    },
+    {
+      "nombrePlatillo": "Irma",
+      "precioPlatillo": "Dorantes",
+      "categoria": "bebida",
+      "id": 9
+    },
+    {
+      "nombrePlatillo": "Jua",
+      "precioPlatillo": "Sanchez",
+      "categoria": "masculino",
+      "id": 10
+    }
+  ]
+}
