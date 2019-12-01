@@ -108,33 +108,54 @@ function EditarProducto(props){
 
             <legend className="text-center">Sexo:</legend>
             <div className="text-center">
-            <div className="form-check form-check-inline">
-                <input 
-                    className="form-check-input" 
-                    type="radio" 
-                    name="categoria"
-                    value="postre"
-                    onChange={leerValorRadio}
-                    defaultChecked={(producto.categoria === 'postre')}
-                />
-                <label className="form-check-label">
-                    Masculino
-                </label>
-            </div>
-            <div className="form-check form-check-inline">
-                <input 
-                    className="form-check-input" 
-                    type="radio" 
-                    name="categoria"
-                    value="bebida"
-                    onChange={leerValorRadio}
-                    defaultChecked={(producto.categoria === 'bebida')}
-                />
-                <label className="form-check-label">
-                   Femenino
-                </label>
-            </div>
-            </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="postre"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Postre
+                    </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="bebida"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Bebida
+                    </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="cortes"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Cortes
+                    </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="ensalada"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Ensalada                    </label>
+                </div>
+                </div>
 
             <input type="submit" className="font-weight-bold text-uppercase mt-5 btn 
             btn-primary btn-block py-3" value="Editar Registro" />

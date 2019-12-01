@@ -80,28 +80,28 @@ function AgregarProducto({history, guardarRecargarProductos}){
                 </div>
 
                 <div className="form-group">
-                    <label>Apellidos</label>
+                    <label>Precio</label>
                     <input 
-                        type="text" 
+                        type="number" 
                         className="form-control" 
                         name="precio"
-                        placeholder="Apellidos"
+                        placeholder="Precio"
                         onChange={e => guardarPrecio(e.target.value)}
                     />
                 </div>
 
-                <legend className="text-center">Sexo:</legend>
+                <legend className="text-center">Categoria:</legend>
                 <div className="text-center">
                 <div className="form-check form-check-inline">
                     <input 
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="masculino"
+                        value="postre"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Masculino
+                        Postre
                     </label>
                 </div>
                 <div className="form-check form-check-inline">
@@ -109,12 +109,35 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="femenino"
+                        value="bebida"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Femenino
+                        Bebida
                     </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="cortes"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Cortes
+                    </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input 
+                        className="form-check-input" 
+                        type="radio" 
+                        name="categoria"
+                        value="ensalada"
+                        onChange={leerValorRadio}
+                    />
+                    <label className="form-check-label">
+                        Ensalada                    </label>
                 </div>
                 </div>
 

@@ -8,20 +8,33 @@ import Swal from "sweetalert2";
 
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 
-const MyDoc = () => (
+axios({
+  url: 'http://localhost:4000/restaurant/${id}',
+  method: 'GET',
+  responseType: 'blob', // important
+}).then((response) => {
+   const url = window.URL.createObjectURL(new Blob([response.data]));
+   const link = document.createElement('a');
+   link.href = url;
+   link.setAttribute('download', 'file.pdf'); //or any other extension
+   document.body.appendChild(link);
+   link.click();
+});
+
+const MyDoc = (producto) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View  style={styles.section}>
       <Text style={styles.title}>NOMBRE</Text>
-      <Text style={styles.subtitle}>Norma</Text>
+      <Text style={styles.subtitle}>{producto.nombrePlatillo}</Text>
       </View>
       <View style={styles.section}>
-      <Text style={styles.title}>APELLIDOS</Text>
-      <Text style={styles.subtitle}>Adame</Text>
+      <Text style={styles.title}>PRECIO</Text>
+      <Text style={styles.subtitle}>25</Text>
       </View>
       <View style={styles.section}>
-      <Text style={styles.title}>SEXO</Text>
-      <Text style={styles.subtitle}>Femenino</Text>
+      <Text style={styles.title}>CATEGORIA</Text>
+      <Text style={styles.subtitle}>Postre</Text>
       </View>
     </Page>
   </Document>
@@ -31,7 +44,6 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
   const eliminarProducto = id => {
     console.log("Eliminando", id);
     //TODO: Eliminar los registros
-
     Swal.fire({
       title: "¿Estas Seguro?",
       text: "Un Registro eliminado no se puede recuperar!",
@@ -70,7 +82,7 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
     >
       <p>
         {producto.nombrePlatillo}{" "}
-        <span className="font-weight-bold"> {producto.precioPlatillo}</span>
+        <span className="font-weight-bold">${producto.precioPlatillo}</span>
       </p>
       <div>
         <Link
@@ -88,13 +100,12 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
           Eliminar &times;
         </button>
 
-        <PDFDownloadLink document={<MyDoc />} fileName="Ejemplo.pdf">
+        <PDFDownloadLink document={<MyDoc/>} fileName="Ejemplo.pdf">
           {({ loading }) => (loading ? "Loading document..." : "Download now!")}
 
           <button
             type="button"
             className="btn btn-success mr-2"
-            onClick={() => eliminarProducto(producto.id)}
           >
             PDF
           </button>

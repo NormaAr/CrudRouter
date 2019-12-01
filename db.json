@@ -1,34 +1,28 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "Benitez",
-      "nombrePlatillo": "Rosaura",
-      "categoria": "bebida",
-      "id": 5
-    },
-    {
-      "precioPlatillo": "Adame",
-      "nombrePlatillo": "Norma",
-      "categoria": "bebida",
-      "id": 7
-    },
-    {
-      "nombrePlatillo": "ghjlkñ",
-      "precioPlatillo": "gjhklñ",
+      "precioPlatillo": "25",
+      "nombrePlatillo": "Fresas",
       "categoria": "postre",
-      "id": 8
+      "id": 11
     },
     {
-      "nombrePlatillo": "Irma",
-      "precioPlatillo": "Dorantes",
+      "nombrePlatillo": "Ensalada de Pollo",
+      "precioPlatillo": "120",
+      "categoria": "ensalada",
+      "id": 12
+    },
+    {
+      "nombrePlatillo": "Ensalada de Primavera",
+      "precioPlatillo": "90",
+      "categoria": "ensalada",
+      "id": 13
+    },
+    {
+      "nombrePlatillo": "Agua Frutas",
+      "precioPlatillo": "80",
       "categoria": "bebida",
-      "id": 9
-    },
-    {
-      "nombrePlatillo": "Jua",
-      "precioPlatillo": "Sanchez",
-      "categoria": "masculino",
-      "id": 10
+      "id": 14
     }
   ]
 }
