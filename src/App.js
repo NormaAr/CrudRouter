@@ -8,7 +8,7 @@ import Productos from './Components/Productos';
 import EditarProducto from './Components/EditarProducto';
 import AgregarProducto from './Components/AgregarProducto';
 import Producto from './Components/Producto';
-import PDF from './Components/Render';
+import PDF from './Components/PDF';
 
 
 

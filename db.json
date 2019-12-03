@@ -23,6 +23,12 @@
       "precioPlatillo": "80",
       "categoria": "bebida",
       "id": 14
+    },
+    {
+      "nombrePlatillo": "ggs",
+      "precioPlatillo": "6678",
+      "categoria": "postre",
+      "id": 15
     }
   ]
 }

@@ -8,39 +8,28 @@ import Swal from "sweetalert2";
 
 import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 
-axios({
-  url: 'http://localhost:4000/restaurant/${id}',
-  method: 'GET',
-  responseType: 'blob', // important
-}).then((response) => {
-   const url = window.URL.createObjectURL(new Blob([response.data]));
-   const link = document.createElement('a');
-   link.href = url;
-   link.setAttribute('download', 'file.pdf'); //or any other extension
-   document.body.appendChild(link);
-   link.click();
-});
 
-const MyDoc = (producto) => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View  style={styles.section}>
-      <Text style={styles.title}>NOMBRE</Text>
-      <Text style={styles.subtitle}>{producto.nombrePlatillo}</Text>
-      </View>
-      <View style={styles.section}>
-      <Text style={styles.title}>PRECIO</Text>
-      <Text style={styles.subtitle}>25</Text>
-      </View>
-      <View style={styles.section}>
-      <Text style={styles.title}>CATEGORIA</Text>
-      <Text style={styles.subtitle}>Postre</Text>
-      </View>
-    </Page>
-  </Document>
-);
+
 
 function ProductoLista({ producto, guardarRecargarProductos }) {
+  const MyDoc = () => (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        <View  style={styles.section}>
+        <Text style={styles.title}>NOMBRE</Text>
+        <Text style={styles.subtitle}>{producto.nombrePlatillo}{""}</Text>
+        </View>
+        <View style={styles.section}>
+        <Text style={styles.title}>PRECIO</Text>
+        <Text style={styles.subtitle}>${producto.precioPlatillo}</Text>
+        </View>
+        <View style={styles.section}>
+        <Text style={styles.title}>CATEGORIA</Text>
+        <Text style={styles.subtitle}>{producto.categoria}</Text>
+        </View>
+      </Page>
+    </Document>
+  );
   const eliminarProducto = id => {
     console.log("Eliminando", id);
     //TODO: Eliminar los registros
