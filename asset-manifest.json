@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/CrudRouter/static/js/main.b6f5fde5.chunk.js",
-    "main.js.map": "/CrudRouter/static/js/main.b6f5fde5.chunk.js.map",
-    "runtime-main.js": "/CrudRouter/static/js/runtime-main.15397d03.js",
-    "runtime-main.js.map": "/CrudRouter/static/js/runtime-main.15397d03.js.map",
-    "static/js/2.23ae32f8.chunk.js": "/CrudRouter/static/js/2.23ae32f8.chunk.js",
-    "static/js/2.23ae32f8.chunk.js.map": "/CrudRouter/static/js/2.23ae32f8.chunk.js.map",
-    "index.html": "/CrudRouter/index.html",
-    "precache-manifest.19bd009f6281389fbc4e2b7087b42fc8.js": "/CrudRouter/precache-manifest.19bd009f6281389fbc4e2b7087b42fc8.js",
-    "service-worker.js": "/CrudRouter/service-worker.js"
+    "main.js": "/Api/static/js/main.eab84ccb.chunk.js",
+    "main.js.map": "/Api/static/js/main.eab84ccb.chunk.js.map",
+    "runtime-main.js": "/Api/static/js/runtime-main.5d7788eb.js",
+    "runtime-main.js.map": "/Api/static/js/runtime-main.5d7788eb.js.map",
+    "static/js/2.100b0b17.chunk.js": "/Api/static/js/2.100b0b17.chunk.js",
+    "static/js/2.100b0b17.chunk.js.map": "/Api/static/js/2.100b0b17.chunk.js.map",
+    "index.html": "/Api/index.html",
+    "precache-manifest.0db07f09e896feb264fd5684e26aec3c.js": "/Api/precache-manifest.0db07f09e896feb264fd5684e26aec3c.js",
+    "service-worker.js": "/Api/service-worker.js"
   },
   "entrypoints": [
-    "static/js/runtime-main.15397d03.js",
-    "static/js/2.23ae32f8.chunk.js",
-    "static/js/main.b6f5fde5.chunk.js"
+    "static/js/runtime-main.5d7788eb.js",
+    "static/js/2.100b0b17.chunk.js",
+    "static/js/main.eab84ccb.chunk.js"
   ]
 }
