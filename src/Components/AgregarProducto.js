@@ -31,7 +31,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
 
             //Crear el nuevo producto
             try{
-                const resultado = await axios.post('https://github.com/NormaAr/CrudRouter/blob/master/db.json', {
+                const resultado = await axios.post('http://localhost:4000/restaurant', {
                 nombrePlatillo,
                 precioPlatillo,
                 categoria
@@ -69,7 +69,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                 onSubmit={agregarProducto}
             >
                 <div className="form-group">
-                    <label>Nombre</label>
+                    <label>Nombre Platillo</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -83,7 +83,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                     <label>Precio</label>
                     <input 
                         type="number" 
-                        className="form-control" 
+            aatill            className="form-control" 
                         name="precio"
                         placeholder="Precio"
                         onChange={e => guardarPrecio(e.target.value)}

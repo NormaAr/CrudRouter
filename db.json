@@ -29,6 +29,12 @@
       "precioPlatillo": "6678",
       "categoria": "postre",
       "id": 15
+    },
+    {
+      "nombrePlatillo": "ml",
+      "precioPlatillo": "2656",
+      "categoria": "postre",
+      "id": 16
     }
   ]
 }
