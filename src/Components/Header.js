@@ -23,13 +23,6 @@ const Header = () => (
         activeClassName="active"
         >Nuevo Registro</NavLink>
     </li>
-    <li className="nav-item">
-        <NavLink
-        to='/PDF'
-        className="nav-link"
-        activeClassName="active"
-        >Reporte</NavLink>
-    </li>
 </ul>
 </div>
 </nav>

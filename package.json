@@ -2,7 +2,7 @@
   "name": "routercrud",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NormaAr.github.io/CrudRouter",
+  "homepage": "https://NormaAr.github.io/Api",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",
     "axios": "^0.19.0",
