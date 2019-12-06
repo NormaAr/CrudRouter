@@ -25,16 +25,22 @@
       "id": 14
     },
     {
-      "nombrePlatillo": "ggs",
-      "precioPlatillo": "6678",
-      "categoria": "postre",
+      "nombrePlatillo": "htt",
+      "precioPlatillo": "56",
+      "categoria": "cortes",
       "id": 15
     },
     {
-      "nombrePlatillo": "ml",
-      "precioPlatillo": "2656",
-      "categoria": "postre",
+      "nombrePlatillo": "mjmy",
+      "precioPlatillo": "85",
+      "categoria": "cortes",
       "id": 16
+    },
+    {
+      "nombrePlatillo": "tr",
+      "precioPlatillo": "15",
+      "categoria": "postre",
+      "id": 17
     }
   ]
 }

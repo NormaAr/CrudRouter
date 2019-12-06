@@ -83,7 +83,7 @@ function EditarProducto(props){
             onSubmit={editarProducto}
         >
             <div className="form-group">
-                <label>Nombre</label>
+                <label>Nombre Platillo</label>
                 <input 
                     type="text" 
                     className="form-control" 
