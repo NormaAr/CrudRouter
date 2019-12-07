@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bb2398040669d0bf0348559a5c3be5c8",
+    "revision": "ea0cd373206213a932cb11adc3044633",
     "url": "/CrudRouter/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CrudRouter/static/js/2.1dfd0248.chunk.js"
   },
   {
-    "revision": "5df47259bfc4eef190f8",
-    "url": "/CrudRouter/static/js/main.64c273d4.chunk.js"
+    "revision": "fd66a1ed426c29e8bb54",
+    "url": "/CrudRouter/static/js/main.ed33686f.chunk.js"
   },
   {
     "revision": "bebd86789351d13e2270",
