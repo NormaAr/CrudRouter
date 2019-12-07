@@ -31,7 +31,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
 
             //Crear el nuevo producto
             try{
-                const resultado = await axios.post('https://github.com/NormaAr/Api/blob/master/db.json', {
+                const resultado = await axios.post('http://jsonplaceholder.typicode.com/users', {
                 nombrePlatillo,
                 precioPlatillo,
                 categoria

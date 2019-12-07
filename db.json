@@ -29,18 +29,6 @@
       "precioPlatillo": "56",
       "categoria": "cortes",
       "id": 15
-    },
-    {
-      "nombrePlatillo": "mjmy",
-      "precioPlatillo": "85",
-      "categoria": "cortes",
-      "id": 16
-    },
-    {
-      "nombrePlatillo": "tr",
-      "precioPlatillo": "15",
-      "categoria": "postre",
-      "id": 17
     }
   ]
 }
