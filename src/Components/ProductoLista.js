@@ -20,11 +20,11 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
         <Text style={styles.subtitle}>{producto.nombrePlatillo}{""}</Text>
         </View>
         <View style={styles.section}>
-        <Text style={styles.title}>PRECIO</Text>
-        <Text style={styles.subtitle}>${producto.precioPlatillo}</Text>
+        <Text style={styles.title}>EDAD</Text>
+        <Text style={styles.subtitle}>{producto.precioPlatillo}</Text>
         </View>
         <View style={styles.section}>
-        <Text style={styles.title}>CATEGORIA</Text>
+        <Text style={styles.title}>SEXO</Text>
         <Text style={styles.subtitle}>{producto.categoria}</Text>
         </View>
       </Page>
