@@ -71,7 +71,7 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
     >
       <p>
         {producto.nombrePlatillo}{" "}
-        <span className="font-weight-bold">Edad: {producto.precioPlatillo}</span>
+        <span className="font-weight-bold">Edad:{producto.precioPlatillo}</span>
       </p>
       <div>
         <Link

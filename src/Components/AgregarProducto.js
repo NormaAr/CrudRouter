@@ -43,6 +43,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         'El registro se creo correctamente!',
                         'success'
                       )
+                      const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
                 }
 
             }catch(error){
@@ -115,29 +116,6 @@ function AgregarProducto({history, guardarRecargarProductos}){
                     <label className="form-check-label">
                         Femenino
                     </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="cortes"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Cortes
-                    </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="ensalada"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Ensalada                    </label>
                 </div>
                 </div>
 
