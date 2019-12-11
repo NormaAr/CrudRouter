@@ -97,7 +97,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="masculino"
+                        value="Masculino"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
@@ -109,7 +109,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="femenino"
+                        value="Femenino"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
