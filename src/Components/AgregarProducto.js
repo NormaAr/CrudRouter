@@ -81,12 +81,12 @@ function AgregarProducto({history, guardarRecargarProductos}){
                 </div>
 
                 <div className="form-group">
-                    <label>Edad</label>
+                    <label>Fecha Nacimiento</label>
                     <input 
                         type="number" 
             aatill      className="form-control" 
                         name="precio"
-                        placeholder="Edad"
+                        placeholder="Fecha"
                         onChange={e => guardarPrecio(e.target.value)}
                     />
                 </div>
