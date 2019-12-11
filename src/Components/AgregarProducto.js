@@ -100,16 +100,6 @@ function AgregarProducto({history, guardarRecargarProductos}){
                     />
                 </div>
                 <div className="form-group">
-                    <label>Correo</label>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        name="Correo" 
-                        placeholder="Correo"
-                        onChange={e => guardarNombre(e.target.value)}
-                    />
-                </div>
-                <div className="form-group">
                     <label>Fecha Nacimiento</label>
                     <input 
                         type="number" 
