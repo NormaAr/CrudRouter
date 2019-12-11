@@ -83,24 +83,24 @@ function EditarProducto(props){
             onSubmit={editarProducto}
         >
             <div className="form-group">
-                <label>Nombre Platillo</label>
+                <label>Nombre Completo</label>
                 <input 
                     type="text" 
                     className="form-control" 
                     name="nombre" 
-                    placeholder="Nombre"
+                    placeholder="Nombre Apellidos"
                     ref={nombrePlatilloRef}
                     defaultValue={producto.nombrePlatillo}
                 />
             </div>
 
             <div className="form-group">
-                <label>Apellidos</label>
+                <label>Edad</label>
                 <input 
-                    type="text" 
+                    type="number" 
                     className="form-control" 
                     name="precio"
-                    placeholder="Apellidos"
+                    placeholder="Edad"
                     ref={precioPlatilloRef}
                     defaultValue={producto.precioPlatillo}
                 />
@@ -112,12 +112,12 @@ function EditarProducto(props){
                     <input 
                         className="form-check-input" 
                         type="radio" 
-                        name="categoria"
+                        name="masculino"
                         value="postre"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Postre
+                        Masculino
                     </label>
                 </div>
                 <div className="form-check form-check-inline">
@@ -125,35 +125,12 @@ function EditarProducto(props){
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="bebida"
+                        value="femenino"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Bebida
+                        Femenino
                     </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="cortes"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Cortes
-                    </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="ensalada"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Ensalada                    </label>
                 </div>
                 </div>
 

@@ -69,39 +69,39 @@ function AgregarProducto({history, guardarRecargarProductos}){
                 onSubmit={agregarProducto}
             >
                 <div className="form-group">
-                    <label>Nombre Platillo</label>
+                    <label>Nombre Completo</label>
                     <input 
                         type="text" 
                         className="form-control" 
                         name="nombre" 
-                        placeholder="Nombre"
+                        placeholder="Nombre Apellidos"
                         onChange={e => guardarNombre(e.target.value)}
                     />
                 </div>
 
                 <div className="form-group">
-                    <label>Precio</label>
+                    <label>Edad</label>
                     <input 
                         type="number" 
-            aatill            className="form-control" 
+            aatill      className="form-control" 
                         name="precio"
-                        placeholder="Precio"
+                        placeholder="Edad"
                         onChange={e => guardarPrecio(e.target.value)}
                     />
                 </div>
 
-                <legend className="text-center">Categoria:</legend>
+                <legend className="text-center">Sexo:</legend>
                 <div className="text-center">
                 <div className="form-check form-check-inline">
                     <input 
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="postre"
+                        value="masculino"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Postre
+                        Masculino
                     </label>
                 </div>
                 <div className="form-check form-check-inline">
@@ -109,11 +109,11 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         className="form-check-input" 
                         type="radio" 
                         name="categoria"
-                        value="bebida"
+                        value="femenino"
                         onChange={leerValorRadio}
                     />
                     <label className="form-check-label">
-                        Bebida
+                        Femenino
                     </label>
                 </div>
                 <div className="form-check form-check-inline">
