@@ -42,7 +42,7 @@ function EditarProducto(props){
             categoria : categoriaPlatillo
         }
         //Enviar el request 
-        const url=`http://localhost:4000/restaurant/${producto.id}`;
+        const url=`https://prueba-ap.herokuapp.com/restaurant/${producto.id}`;
         
         try{
             const resultado = await axios.put(url, editarPlatillo);

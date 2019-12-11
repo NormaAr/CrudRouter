@@ -45,7 +45,7 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
     }).then(async result => {
       if (result.value) {
         try {
-          const url = `http://localhost:4000/restaurant/${id}`;
+          const url = `https://prueba-ap.herokuapp.com/restaurant/${id}`;
           const resultado = await axios.delete(url);
           if (resultado.status === 200) {
             Swal.fire("Eliminado!", "El Registro se ha eliminado.", "success");
