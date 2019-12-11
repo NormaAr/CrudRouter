@@ -70,16 +70,45 @@ function AgregarProducto({history, guardarRecargarProductos}){
                 onSubmit={agregarProducto}
             >
                 <div className="form-group">
-                    <label>Nombre Completo</label>
+                    <label>Nombre</label>
                     <input 
                         type="text" 
                         className="form-control" 
                         name="nombre" 
-                        placeholder="Nombre Apellidos"
+                        placeholder="Nombre"
                         onChange={e => guardarNombre(e.target.value)}
                     />
                 </div>
-
+                <div className="form-group">
+                    <label>Apellido Paterno</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="nombre" 
+                        placeholder="Apellido Paterno"
+                        onChange={e => guardarNombre(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Apellido Materno</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="nombre" 
+                        placeholder="Apellido Materno"
+                        onChange={e => guardarNombre(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Correo</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="Correo" 
+                        placeholder="Correo"
+                        onChange={e => guardarNombre(e.target.value)}
+                    />
+                </div>
                 <div className="form-group">
                     <label>Fecha Nacimiento</label>
                     <input 
