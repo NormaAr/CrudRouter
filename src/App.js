@@ -22,8 +22,9 @@ useEffect(() => {
 if(recargarProductos) {
   const consultarApi = async () => {
     //Consultar Api de json-server
-  
-    const resultado = await axios.get('https://github.com/NormaAr/CrudRouter/edit/master/db.json');
+    //const resultado = await axios.get('http://localhost:4000/restaurant');
+    const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
+    
   
     guardarProductos(resultado.data);
   }
