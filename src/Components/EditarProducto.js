@@ -52,6 +52,7 @@ function EditarProducto(props){
                     'El registro se edito correctamente!',
                     'success'
                   )
+                  
             }
 
         }catch(error){
@@ -63,6 +64,7 @@ function EditarProducto(props){
               })  
         }
         //Redirigir al usuario, consultar Api
+        const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
         guardarRecargarProductos(true);
         history.push('/productos');
 
