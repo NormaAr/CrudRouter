@@ -31,7 +31,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
 
             //Crear el nuevo producto
             try{
-                const resultado = await axios.post('http://jsonplaceholder.typicode.com/users', {
+                const resultado = await axios.post('http://localhost:4000/restaurant', {
                 nombrePlatillo,
                 precioPlatillo,
                 categoria
