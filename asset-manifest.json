@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/CrudRouter/static/js/main.b745f7da.chunk.js",
-    "main.js.map": "/CrudRouter/static/js/main.b745f7da.chunk.js.map",
+    "main.js": "/CrudRouter/static/js/main.53d5d041.chunk.js",
+    "main.js.map": "/CrudRouter/static/js/main.53d5d041.chunk.js.map",
     "runtime-main.js": "/CrudRouter/static/js/runtime-main.15397d03.js",
     "runtime-main.js.map": "/CrudRouter/static/js/runtime-main.15397d03.js.map",
     "static/js/2.1dfd0248.chunk.js": "/CrudRouter/static/js/2.1dfd0248.chunk.js",
     "static/js/2.1dfd0248.chunk.js.map": "/CrudRouter/static/js/2.1dfd0248.chunk.js.map",
     "index.html": "/CrudRouter/index.html",
-    "precache-manifest.f786f4a961194a8e91ee8e8cbcb0e870.js": "/CrudRouter/precache-manifest.f786f4a961194a8e91ee8e8cbcb0e870.js",
+    "precache-manifest.f66fc9e2158b3c03f4bbd8dbd5fa588f.js": "/CrudRouter/precache-manifest.f66fc9e2158b3c03f4bbd8dbd5fa588f.js",
     "service-worker.js": "/CrudRouter/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.15397d03.js",
     "static/js/2.1dfd0248.chunk.js",
-    "static/js/main.b745f7da.chunk.js"
+    "static/js/main.53d5d041.chunk.js"
   ]
 }
