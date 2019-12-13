@@ -8,7 +8,6 @@ import Productos from './Components/Productos';
 import EditarProducto from './Components/EditarProducto';
 import AgregarProducto from './Components/AgregarProducto';
 import Producto from './Components/Producto';
-import PDF from './Components/PDF';
 
 
 
@@ -16,7 +15,7 @@ function App() {
 
 
 const [ productos, guardarProductos] = useState([]);
-const [ recargarProductos, guardarRecargarProductos] = useState(true);
+const [ recargarProductos, guardarRecargarRegistros] = useState(true);
 
 useEffect(() => {
 if(recargarProductos) {
@@ -30,7 +29,7 @@ if(recargarProductos) {
   }
   consultarApi();
   //Cambiar a false la recarga de los productos
-  guardarRecargarProductos(false);
+  guardarRecargarRegistros(false);
 }
 }, [recargarProductos]);
 
@@ -40,24 +39,23 @@ if(recargarProductos) {
 <Header />
 <main className="container mt-5">
 <Switch>
-  <Route exact path="/productos"
+  <Route exact path="/registros"
       render={() => (
         <Productos
          productos={productos}
-         guardarRecargarProductos={guardarRecargarProductos}
+         guardarRecargarRegistros={guardarRecargarRegistros}
          />
       )}
    /> 
 
-  <Route exact path="/nuevo-producto" 
+  <Route exact path="/nuevo-registro" 
   render={() => (
   <AgregarProducto
-  guardarRecargarProductos={guardarRecargarProductos}
+  guardarRecargarRegistros={guardarRecargarRegistros}
   />
   )} />
-  <Route exact path="/productos/:id" component={Producto} />
-  <Route exact path="/PDF" component={PDF} />
-  <Route exact path="/productos/editar/:id"
+  <Route exact path="/registros/:id" component={Producto} />
+  <Route exact path="/registros/editar/:id"
    render={props => {
      //Tomar ID del producto 
     const idProducto = parseInt(props.match.params.id);
@@ -68,7 +66,7 @@ if(recargarProductos) {
      return(
        <EditarProducto
          producto={producto[0]}
-         guardarRecargarProductos = {guardarRecargarProductos}
+         guardarRecargarRegistros = {guardarRecargarRegistros}
        />
      )
    }} />

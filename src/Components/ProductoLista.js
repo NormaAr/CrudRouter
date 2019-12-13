@@ -11,21 +11,25 @@ import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-
 
 
 
-function ProductoLista({ producto, guardarRecargarProductos }) {
+function ProductoLista({producto,guardarRecargarRegistros}) {
   const MyDoc = () => (
     <Document>
       <Page size="A4" style={styles.page}>
         <View  style={styles.section}>
         <Text style={styles.title}>NOMBRE</Text>
-        <Text style={styles.subtitle}>{producto.nombrePlatillo}{""}</Text>
+        <Text style={styles.subtitle}>{producto.nombre}{""}</Text>
         </View>
         <View style={styles.section}>
-        <Text style={styles.title}>EDAD</Text>
-        <Text style={styles.subtitle}>{producto.precioPlatillo}</Text>
+        <Text style={styles.title}>APELLIDO PATERNO</Text>
+        <Text style={styles.subtitle}>{producto.apellidoP}</Text>
         </View>
         <View style={styles.section}>
-        <Text style={styles.title}>SEXO</Text>
-        <Text style={styles.subtitle}>{producto.categoria}</Text>
+        <Text style={styles.title}>APELLIDO MATERNO</Text>
+        <Text style={styles.subtitle}>{producto.apellidoM}</Text>
+        </View>
+        <View style={styles.section}>
+        <Text style={styles.title}>E-MAIL</Text>
+        <Text style={styles.subtitle}>{producto.correo}</Text>
         </View>
       </Page>
     </Document>
@@ -50,8 +54,9 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
           if (resultado.status === 200) {
             Swal.fire("Eliminado!", "El Registro se ha eliminado.", "success");
             //Consultar la api nuevamente
-            guardarRecargarProductos(true);
-          }
+            //guardarRecargarRegistros(true);
+          }            
+                      
         } catch (error) {
           console.log(error);
           Swal.fire({
@@ -59,6 +64,7 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
             title: "Error",
             text: "Hubo un error, vuelva a intentarlo!"
           });
+
         }
       }
     });
@@ -70,12 +76,15 @@ function ProductoLista({ producto, guardarRecargarProductos }) {
             aling-items-center"
     >
       <p>
-        {producto.nombrePlatillo}{" "}
-        <span className="font-weight-bold">Nacimiento:{producto.precioPlatillo}</span>
+      <span className="font-weight-bold"> {producto.nombre}</span>
+      <span className="font-weight-bold">  {producto.apellidoP}</span>
+      <span className="font-weight-bold">  {producto.apellidoM}  </span>
+      {producto.correo}{ " " }
+        
       </p>
       <div>
         <Link
-          to={`/productos/editar/${producto.id}`}
+          to={`/registros/editar/${producto.id}`}
           className="btn btn-success mr-2"
         >
           Editar
@@ -117,7 +126,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   title: {
-    fontSize: 15,
+    fontSize: 12,
     backgroundColor: '#98999A'
   },
   subtitle: {

@@ -1,34 +1,25 @@
 {
   "restaurant": [
     {
-      "precioPlatillo": "25",
-      "nombrePlatillo": "Fresas",
-      "categoria": "postre",
-      "id": 11
+      "nombre": "Daniel",
+      "apellidoP": "Rodrigues",
+      "apellidoM": "Angeles",
+      "correo": "daniel.rodrigues@gmail.com",
+      "id": 4
     },
     {
-      "nombrePlatillo": "Ensalada de Pollo",
-      "precioPlatillo": "120",
-      "categoria": "ensalada",
-      "id": 12
+      "nombre": "Lisbeth ",
+      "apellidoP": "Rios",
+      "apellidoM": "Galban",
+      "correo": "lisbeth.rios@gmail.com",
+      "id": 5
     },
     {
-      "nombrePlatillo": "Ensalada de Primavera",
-      "precioPlatillo": "90",
-      "categoria": "ensalada",
-      "id": 13
-    },
-    {
-      "nombrePlatillo": "Agua Frutas",
-      "precioPlatillo": "80",
-      "categoria": "bebida",
-      "id": 14
-    },
-    {
-      "nombrePlatillo": "htt",
-      "precioPlatillo": "56",
-      "categoria": "cortes",
-      "id": 15
+      "nombre": "cfvghbjnkml,",
+      "apellidoP": "gvhbnm",
+      "apellidoM": "vbnm,",
+      "correo": "ghjkl",
+      "id": 6
     }
   ]
 }

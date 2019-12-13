@@ -6,19 +6,19 @@ const Header = () => (
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 <div className="container">
 <Link to="/productos" className ="navbar-brand">
-    React CRUD y Routing
+    React CRUD 
 </Link>
 <ul className = "navbar-nav mr-auto">
     <li className="nav-item">
         <NavLink
-        to='/productos'
+        to='/registros'
         className="nav-link"
         activeClassName="active"
         >Registros</NavLink>
     </li>
     <li className="nav-item">
         <NavLink
-        to='/nuevo-producto'
+        to='/nuevo-registro'
         className="nav-link"
         activeClassName="active"
         >Nuevo Registro</NavLink>

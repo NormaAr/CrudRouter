@@ -8,40 +8,42 @@ import { withRouter } from 'react-router-dom';
 function EditarProducto(props){
     
     //destructuring de props
-    const {history,producto, guardarRecargarProductos}=props;
+    const {history,producto, guardarRecargarRegistros}=props;
     
     //Generar los refs
-    const precioPlatilloRef = useRef('');
-    const nombrePlatilloRef = useRef('');
+    const nombreRef = useRef('');
+    const apellidoPRef = useRef('');
+    const apellidoMRef = useRef('');
+    const correoRef = useRef('');
 
 
     const [error, guardarError] = useState(false);
-    const [categoria, guardarCategoria] = useState('');
+   
 
     const editarProducto = async e =>{
         e.preventDefault();
 
     //Validacion
-    const nuevoNombrePlatillo = nombrePlatilloRef.current.value,
-          nuevoPrecioPlatillo = precioPlatilloRef.current.value;
+    const nuevoNombre = nombreRef.current.value,
+          nuevoApellidoP = apellidoPRef.current.value,
+          nuevoApellidoM = apellidoMRef.current.value,
+          nuevoCorreo = correoRef.current.value;
 
-        if(nuevoNombrePlatillo === '' || nuevoPrecioPlatillo === '' || categoria === ''){
+        if(nuevoNombre === '' || nuevoApellidoP === '' || nuevoApellidoM === '' || nuevoCorreo === ''){
             guardarError(true)
             return;
         }
         guardarError(false);
 
-        //Revisar si cambio la categoria de lo contrario asignar el mismo valor 
-        let categoriaPlatillo=(categoria === '') ? producto.categoria : categoria;
-        console.log(categoriaPlatillo);
-
         //Obtener los valores del formulario 
         const editarPlatillo={
-            precioPlatillo : nuevoPrecioPlatillo,
-            nombrePlatillo : nuevoNombrePlatillo,
-            categoria : categoriaPlatillo
+            nombre : nuevoNombre,
+            apellidoP : nuevoApellidoP,
+            apellidoM : nuevoApellidoM,
+            correo : nuevoCorreo
         }
         //Enviar el request 
+        //const url=`http://localhost:4000/restaurant/${producto.id}`;
         const url=`https://prueba-ap.herokuapp.com/restaurant/${producto.id}`;
         
         try{
@@ -64,15 +66,11 @@ function EditarProducto(props){
               })  
         }
         //Redirigir al usuario, consultar Api
-        const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
-        guardarRecargarProductos(true);
+        guardarRecargarRegistros(true);
         history.push('/productos');
 
     }
-    const leerValorRadio = e => {
-        guardarCategoria(e.target.value);
-    }
-    
+
 
     return(
         <div className="col-md-8 mx-auto ">
@@ -85,57 +83,54 @@ function EditarProducto(props){
             onSubmit={editarProducto}
         >
             <div className="form-group">
-                <label>Nombre Completo</label>
+                <label>Nombre</label>
                 <input 
                     type="text" 
                     className="form-control" 
-                    name="nombre" 
-                    placeholder="Nombre Apellidos"
-                    ref={nombrePlatilloRef}
-                    defaultValue={producto.nombrePlatillo}
+                    name="Nombre" 
+                    placeholder="Nombre"
+                    maxLength = {20}
+                    ref={nombreRef}
+                    defaultValue={producto.nombre}
                 />
             </div>
 
             <div className="form-group">
-                <label>Edad</label>
+                <label>Apellido Paterno</label>
                 <input 
-                    type="number" 
+                    type="text" 
                     className="form-control" 
-                    name="precio"
-                    placeholder="Edad"
-                    ref={precioPlatilloRef}
-                    defaultValue={producto.precioPlatillo}
+                    name="Apellido Paterno" 
+                    placeholder="Apellido Paterno"
+                    maxLength = {20}
+                    ref={apellidoPRef}
+                    defaultValue={producto.apellidoP}
                 />
+                 <div className="form-group">
+                    <label>Apellido Materno</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="Apellido Materno" 
+                        placeholder="Apellido Materno"
+                        maxLength = {20}
+                        ref={apellidoMRef}
+                        defaultValue={producto.apellidoM}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Correo</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="Correo"
+                        placeholder="Correo"
+                        maxLength = {30}
+                        ref={correoRef}
+                        defaultValue={producto.correo}
+                    />
+                </div>
             </div>
-
-            <legend className="text-center">Sexo:</legend>
-            <div className="text-center">
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="masculino"
-                        value="postre"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Masculino
-                    </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="femenino"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Femenino
-                    </label>
-                </div>
-                </div>
-
             <input type="submit" className="font-weight-bold text-uppercase mt-5 btn 
             btn-primary btn-block py-3" value="Editar Registro" />
         </form>

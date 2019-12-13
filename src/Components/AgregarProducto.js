@@ -6,23 +6,19 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { withRouter } from 'react-router-dom';
 
-function AgregarProducto({history, guardarRecargarProductos}){
-
+function AgregarRegistro({history, guardarRecargarRegistros}){
 
     //state
-    const [nombrePlatillo, guardarNombre] = useState('');
-    const [precioPlatillo, guardarPrecio] = useState('');
-    const [categoria, guardarCategoria] = useState('');
+    const [nombre, guardarNombre] = useState('');
+    const [apellidoP, guardarapellidoP] = useState('');
+    const [apellidoM, guardarapellidoM] = useState('');
+    const [correo, guardarCorreo] = useState('');
     const [error, guardarError] = useState(false);
 
-    const leerValorRadio = e => {
-        guardarCategoria(e.target.value);
-    }
-
-    const agregarProducto = async e => {
+    const agregarRegistro = async e => {
         e.preventDefault();
 
-        if(nombrePlatillo ==='' || precioPlatillo === '' || categoria === ''){
+        if(nombre ==='' || apellidoP === '' || apellidoM === '' || correo=== ''){
             guardarError(true);
             return;
         }
@@ -32,9 +28,10 @@ function AgregarProducto({history, guardarRecargarProductos}){
             //Crear el nuevo producto
             try{
                 const resultado = await axios.post('https://prueba-ap.herokuapp.com/restaurant', {
-                nombrePlatillo,
-                precioPlatillo,
-                categoria
+                nombre,
+                apellidoP,
+                apellidoM,
+                correo
                 });
 
                 if(resultado.status === 201){
@@ -43,7 +40,9 @@ function AgregarProducto({history, guardarRecargarProductos}){
                         'El registro se creo correctamente!',
                         'success'
                       )
+                      //const resultado = await axios.get('http://localhost:4000/restaurant');
                       const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
+                      
                 }
 
             }catch(error){
@@ -55,7 +54,7 @@ function AgregarProducto({history, guardarRecargarProductos}){
                   })
             }
             //Redirigir al usuario a productos
-            guardarRecargarProductos(true);
+            guardarRecargarRegistros(true);
             history.push('/productos');
     }
 
@@ -67,15 +66,16 @@ function AgregarProducto({history, guardarRecargarProductos}){
 
             <form
                 className="mt-5"
-                onSubmit={agregarProducto}
+                onSubmit={agregarRegistro}
             >
                 <div className="form-group">
                     <label>Nombre</label>
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="nombre" 
+                        name="Nombre" 
                         placeholder="Nombre"
+                        maxLength = {20}
                         onChange={e => guardarNombre(e.target.value)}
                     />
                 </div>
@@ -84,9 +84,10 @@ function AgregarProducto({history, guardarRecargarProductos}){
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="nombre" 
+                        name="Apellido Paterno" 
                         placeholder="Apellido Paterno"
-                        onChange={e => guardarNombre(e.target.value)}
+                        maxLength = {20}
+                        onChange={e => guardarapellidoP(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
@@ -94,56 +95,27 @@ function AgregarProducto({history, guardarRecargarProductos}){
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="nombre" 
+                        name="Apellido Materno" 
                         placeholder="Apellido Materno"
-                        onChange={e => guardarNombre(e.target.value)}
+                        maxLength = {20}
+                        onChange={e => guardarapellidoM(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
                     <label>Correo</label>
                     <input 
-                        type="number" 
-            aatill      className="form-control" 
+                        type="text" 
+                        className="form-control" 
                         name="correo"
-                        placeholder="Fecha"
-                        maxLength = {5}
-                        keyboardType="email-address"
-                        onChange={e => guardarPrecio(e.target.value)}
+                        placeholder="ejemplo@gmail.com"
+                        maxLength = {30}
+                        onChange={e => guardarCorreo(e.target.value)}
                     />
                 </div>
-
-                <legend className="text-center">Sexo:</legend>
-                <div className="text-center">
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="Masculino"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Masculino
-                    </label>
-                </div>
-                <div className="form-check form-check-inline">
-                    <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="categoria"
-                        value="Femenino"
-                        onChange={leerValorRadio}
-                    />
-                    <label className="form-check-label">
-                        Femenino
-                    </label>
-                </div>
-                </div>
-
                 <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Agregar Registro" />
             </form>
         </div>
     )
 }
 
-export default withRouter (AgregarProducto); 
+export default withRouter (AgregarRegistro); 
