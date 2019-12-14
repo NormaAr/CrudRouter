@@ -11,7 +11,7 @@ import { PDFDownloadLink, Document, Page, Text, View, StyleSheet } from "@react-
 
 
 
-function ProductoLista({producto,guardarRecargarRegistros}) {
+function ProductoLista({history,producto,guardarRecargarRegistros}) {
   const MyDoc = () => (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -31,6 +31,10 @@ function ProductoLista({producto,guardarRecargarRegistros}) {
         <Text style={styles.title}>E-MAIL</Text>
         <Text style={styles.subtitle}>{producto.correo}</Text>
         </View>
+        <View style={styles.section}>
+        <Text style={styles.title}>F-NACIMIENTO</Text>
+        <Text style={styles.subtitle}>{producto.fecha}</Text>
+        </View>
       </Page>
     </Document>
   );
@@ -47,16 +51,21 @@ function ProductoLista({producto,guardarRecargarRegistros}) {
       confirmButtonText: "Eliminar",
       cancelButtonText: "Cancelar"
     }).then(async result => {
+
       if (result.value) {
+
+
         try {
           const url = `https://prueba-ap.herokuapp.com/restaurant/${id}`;
           const resultado = await axios.delete(url);
           if (resultado.status === 200) {
             Swal.fire("Eliminado!", "El Registro se ha eliminado.", "success");
+            
             //Consultar la api nuevamente
-            //guardarRecargarRegistros(true);
+            guardarRecargarRegistros(true)
           }            
-                      
+             
+
         } catch (error) {
           console.log(error);
           Swal.fire({
@@ -79,6 +88,7 @@ function ProductoLista({producto,guardarRecargarRegistros}) {
       <span className="font-weight-bold"> {producto.nombre}</span>
       <span className="font-weight-bold">  {producto.apellidoP}</span>
       <span className="font-weight-bold">  {producto.apellidoM}  </span>
+      <span className="font-weight-bold">  {producto.fecha}  </span>
       {producto.correo}{ " " }
         
       </p>
@@ -126,11 +136,11 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   title: {
-    fontSize: 12,
+    fontSize: 11,
     backgroundColor: '#98999A'
   },
   subtitle: {
-    fontSize: 13,
+    fontSize: 11,
   },
 });
 

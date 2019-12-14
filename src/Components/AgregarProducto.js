@@ -13,12 +13,13 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
     const [apellidoP, guardarapellidoP] = useState('');
     const [apellidoM, guardarapellidoM] = useState('');
     const [correo, guardarCorreo] = useState('');
+    const [fecha, guardarFecha] = useState('');
     const [error, guardarError] = useState(false);
 
     const agregarRegistro = async e => {
         e.preventDefault();
 
-        if(nombre ==='' || apellidoP === '' || apellidoM === '' || correo=== ''){
+        if(nombre ==='' || apellidoP === '' || apellidoM === '' || correo === ''|| fecha === ''){
             guardarError(true);
             return;
         }
@@ -31,7 +32,8 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                 nombre,
                 apellidoP,
                 apellidoM,
-                correo
+                correo,
+                fecha
                 });
 
                 if(resultado.status === 201){
@@ -63,7 +65,6 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
             <h1 className="text-center">Agregar Nuevo Registro</h1>
 
             {(error) ? <Error mensaje='Todos los campos son obligatorios' /> : null}
-
             <form
                 className="mt-5"
                 onSubmit={agregarRegistro}
@@ -74,7 +75,9 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                         type="text" 
                         className="form-control" 
                         name="Nombre" 
-                        placeholder="Nombre"
+                        pattern="[A-Z,a-z]{2,15}"
+                        title="El nombre debe de iniciar con letra mayúscula ."
+                        //placeholder="Nombre"
                         maxLength = {20}
                         onChange={e => guardarNombre(e.target.value)}
                     />
@@ -85,7 +88,9 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                         type="text" 
                         className="form-control" 
                         name="Apellido Paterno" 
-                        placeholder="Apellido Paterno"
+                        pattern="[A-Z,a-z]{2,15}"
+                        title="El apellido paterno debe de iniciar con letra mayúscula."
+                        //placeholder="Apellido Paterno"
                         maxLength = {20}
                         onChange={e => guardarapellidoP(e.target.value)}
                     />
@@ -96,7 +101,9 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                         type="text" 
                         className="form-control" 
                         name="Apellido Materno" 
-                        placeholder="Apellido Materno"
+                        pattern="[A-Z,a-z]{2,15}"
+                        title="El apellido materno debe de iniciar con letra mayúscula."
+                        //placeholder="Apellido M"
                         maxLength = {20}
                         onChange={e => guardarapellidoM(e.target.value)}
                     />
@@ -104,14 +111,23 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                 <div className="form-group">
                     <label>Correo</label>
                     <input 
-                        type="text" 
+                        type="email" 
                         className="form-control" 
                         name="correo"
-                        placeholder="ejemplo@gmail.com"
+                        //placeholder="ejemplo@gmail.com"
                         maxLength = {30}
                         onChange={e => guardarCorreo(e.target.value)}
                     />
                 </div>
+                <div className="form-group">
+                    <label>Fecha Nacimiento</label>
+                    <input 
+                        type="date" 
+                        name="trip-start"
+                        onChange={e => guardarFecha(e.target.value)}
+                    />
+                </div>
+
                 <input type="submit" className="font-weight-bold text-uppercase mt-5 btn btn-primary btn-block py-3" value="Agregar Registro" />
             </form>
         </div>

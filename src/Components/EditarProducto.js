@@ -15,6 +15,7 @@ function EditarProducto(props){
     const apellidoPRef = useRef('');
     const apellidoMRef = useRef('');
     const correoRef = useRef('');
+    const fechaRef = useRef('');
 
 
     const [error, guardarError] = useState(false);
@@ -27,9 +28,10 @@ function EditarProducto(props){
     const nuevoNombre = nombreRef.current.value,
           nuevoApellidoP = apellidoPRef.current.value,
           nuevoApellidoM = apellidoMRef.current.value,
-          nuevoCorreo = correoRef.current.value;
+          nuevoCorreo = correoRef.current.value,
+          nuevoFecha = fechaRef.current.value;
 
-        if(nuevoNombre === '' || nuevoApellidoP === '' || nuevoApellidoM === '' || nuevoCorreo === ''){
+        if(nuevoNombre === '' || nuevoApellidoP === '' || nuevoApellidoM === '' || nuevoCorreo === ''|| nuevoFecha === ''){
             guardarError(true)
             return;
         }
@@ -40,12 +42,12 @@ function EditarProducto(props){
             nombre : nuevoNombre,
             apellidoP : nuevoApellidoP,
             apellidoM : nuevoApellidoM,
-            correo : nuevoCorreo
+            correo : nuevoCorreo,
+            fecha : nuevoFecha
         }
         //Enviar el request 
         //const url=`http://localhost:4000/restaurant/${producto.id}`;
         const url=`https://prueba-ap.herokuapp.com/restaurant/${producto.id}`;
-        
         try{
             const resultado = await axios.put(url, editarPlatillo);
             if(resultado.status === 200){
@@ -67,7 +69,7 @@ function EditarProducto(props){
         }
         //Redirigir al usuario, consultar Api
         guardarRecargarRegistros(true);
-        history.push('/productos');
+        history.push('/registros');
 
     }
 
@@ -88,7 +90,9 @@ function EditarProducto(props){
                     type="text" 
                     className="form-control" 
                     name="Nombre" 
-                    placeholder="Nombre"
+                    //placeholder="Nombre"
+                    pattern="[A-Z,a-z]{2,15}"
+                    title="El nombre debe de iniciar con letra mayúscula ."
                     maxLength = {20}
                     ref={nombreRef}
                     defaultValue={producto.nombre}
@@ -101,7 +105,9 @@ function EditarProducto(props){
                     type="text" 
                     className="form-control" 
                     name="Apellido Paterno" 
-                    placeholder="Apellido Paterno"
+                   // placeholder="Apellido Paterno"
+                    pattern="[A-Z,a-z]{2,15}"
+                    title="El apellido paterno debe de iniciar con letra mayúscula."
                     maxLength = {20}
                     ref={apellidoPRef}
                     defaultValue={producto.apellidoP}
@@ -112,7 +118,9 @@ function EditarProducto(props){
                         type="text" 
                         className="form-control" 
                         name="Apellido Materno" 
-                        placeholder="Apellido Materno"
+                        //placeholder="Apellido M"
+                        pattern="[A-Z,a-z]{2,15}"
+                        title="El apellido materno debe de iniciar con letra mayúscula."
                         maxLength = {20}
                         ref={apellidoMRef}
                         defaultValue={producto.apellidoM}
@@ -121,13 +129,22 @@ function EditarProducto(props){
                 <div className="form-group">
                     <label>Correo</label>
                     <input 
-                        type="text" 
+                        type="email" 
                         className="form-control" 
                         name="Correo"
                         placeholder="Correo"
                         maxLength = {30}
                         ref={correoRef}
                         defaultValue={producto.correo}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Fecha Nacimiento</label>
+                    <input 
+                        type="date" 
+                        name="trip-start"
+                        ref={fechaRef}
+                        defaultValue={producto.fecha}
                     />
                 </div>
             </div>
