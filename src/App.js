@@ -23,13 +23,11 @@ if(recargarProductos) {
     //Consultar Api de json-server
     //const resultado = await axios.get('http://localhost:4000/restaurant');
     const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
-    
-  
     guardarProductos(resultado.data);
   }
   consultarApi();
   //Cambiar a false la recarga de los productos
-  guardarRecargarRegistros(false);
+  guardarRecargarRegistros(true);
 }
 }, [recargarProductos]);
 

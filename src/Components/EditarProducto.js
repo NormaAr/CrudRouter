@@ -68,7 +68,7 @@ function EditarProducto(props){
               })  
         }
         //Redirigir al usuario, consultar Api
-        guardarRecargarRegistros(true);
+        guardarRecargarRegistros(false);
         history.push('/registros');
 
     }

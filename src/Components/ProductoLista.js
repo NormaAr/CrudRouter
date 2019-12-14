@@ -61,11 +61,10 @@ function ProductoLista({history,producto,guardarRecargarRegistros}) {
           if (resultado.status === 200) {
             Swal.fire("Eliminado!", "El Registro se ha eliminado.", "success");
             
-            //Consultar la api nuevamente
-            guardarRecargarRegistros(true)
-          }            
-             
-
+          }    
+                    //Consultar la api nuevamente
+                    guardarRecargarRegistros(false)        
+                    history.push('/registros');
         } catch (error) {
           console.log(error);
           Swal.fire({
@@ -74,9 +73,10 @@ function ProductoLista({history,producto,guardarRecargarRegistros}) {
             text: "Hubo un error, vuelva a intentarlo!"
           });
 
+          
         }
       }
-    });
+    });  
   };
   return (
     <li
@@ -88,8 +88,7 @@ function ProductoLista({history,producto,guardarRecargarRegistros}) {
       <span className="font-weight-bold"> {producto.nombre}</span>
       <span className="font-weight-bold">  {producto.apellidoP}</span>
       <span className="font-weight-bold">  {producto.apellidoM}  </span>
-      <span className="font-weight-bold">  {producto.fecha}  </span>
-      {producto.correo}{ " " }
+      {producto.fecha}{ " " }
         
       </p>
       <div>
