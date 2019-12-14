@@ -56,7 +56,7 @@ function AgregarRegistro({history, guardarRecargarRegistros}){
                   })
             }
             //Redirigir al usuario a productos
-            history.push('/registros');
+            history.push('/productos');
             guardarRecargarRegistros(true);
     }
 

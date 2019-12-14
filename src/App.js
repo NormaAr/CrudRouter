@@ -70,7 +70,7 @@ if(recargarProductos) {
    }} />
 </Switch>
 </main>
-<p className = "mt-4 p2 text-center">Todos los Derechos Reservados</p>
+<p className = "mt-4 p2 text-center">Derechos Reservados NAR</p>
 </Router>
   );
 }
