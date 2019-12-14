@@ -63,8 +63,8 @@ function ProductoLista({history,producto,guardarRecargarRegistros}) {
             
           }    
                     //Consultar la api nuevamente
-                    guardarRecargarRegistros(false)        
-                    history.push('/registros');
+                   // guardarRecargarRegistros(false)        
+                    //history.push('/registros');
         } catch (error) {
           console.log(error);
           Swal.fire({
