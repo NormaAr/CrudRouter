@@ -59,12 +59,15 @@ function ProductoLista({history,producto,guardarRecargarRegistros}) {
           const url = `https://prueba-ap.herokuapp.com/restaurant/${id}`;
           const resultado = await axios.delete(url);
           if (resultado.status === 200) {
-            Swal.fire("Eliminado!", "El Registro se ha eliminado.", "success");
-            
+            Swal.fire(
+              "Eliminado!", 
+              "El Registro se ha eliminado.", 
+              "success"
+              )
+
           }    
-                    //Consultar la api nuevamente
-                   // guardarRecargarRegistros(false)        
-                    //history.push('/registros');
+            // Consultar la api nuevamente
+            //guardarRecargarRegistros(true)
         } catch (error) {
           console.log(error);
           Swal.fire({

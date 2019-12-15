@@ -69,7 +69,7 @@ function EditarProducto(props){
         }
         //Redirigir al usuario, consultar Api
         guardarRecargarRegistros(false);
-        history.push('/registros');
+        history.push('/productos');
 
     }
 

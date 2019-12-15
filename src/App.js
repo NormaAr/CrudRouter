@@ -18,18 +18,21 @@ const [ productos, guardarProductos] = useState([]);
 const [ recargarProductos, guardarRecargarRegistros] = useState(true);
 
 useEffect(() => {
-if(recargarProductos) {
-  const consultarApi = async () => {
-    //Consultar Api de json-server
-    //const resultado = await axios.get('http://localhost:4000/restaurant');
-    const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
-    guardarProductos(resultado.data);
-  }
-  consultarApi();
-  //Cambiar a false la recarga de los productos
-  guardarRecargarRegistros(true);
+  if(recargarProductos) {
+    const consultarApi = async () => {
+        // consultar la api de json-server
+        const resultado = await axios.get('https://prueba-ap.herokuapp.com/restaurant');
+
+        guardarProductos(resultado.data);
+    }
+    consultarApi();
+
+    // Cambiar a false la recarga de los productos
+    guardarRecargarRegistros(false);
 }
 }, [recargarProductos]);
+
+
 
 
   return (
@@ -37,7 +40,7 @@ if(recargarProductos) {
 <Header />
 <main className="container mt-5">
 <Switch>
-  <Route exact path="/registros"
+<Route exact path="/registros"
       render={() => (
         <Productos
          productos={productos}
@@ -45,7 +48,6 @@ if(recargarProductos) {
          />
       )}
    /> 
-
   <Route exact path="/nuevo-registro" 
   render={() => (
   <AgregarProducto
