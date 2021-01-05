@@ -5,7 +5,7 @@
   "homepage": "https://NormaAr.github.io/CrudRouter/",
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "nodemailer": "^6.3.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
